@@ -25,6 +25,7 @@ the data can be a ``DateTime`` object, a string, a timestamp or an array.
 |                      | - `hours`_                                                                  |
 |                      | - `html5`_                                                                  |
 |                      | - `input`_                                                                  |
+|                      | - `input_format`_                                                           |
 |                      | - `minutes`_                                                                |
 |                      | - `model_timezone`_                                                         |
 |                      | - `months`_                                                                 |
@@ -46,6 +47,7 @@ the data can be a ``DateTime`` object, a string, a timestamp or an array.
 | options              | - `disabled`_                                                               |
 |                      | - `help`_                                                                   |
 |                      | - `help_attr`_                                                              |
+|                      | - `help_html`_                                                              |
 |                      | - `inherit_data`_                                                           |
 |                      | - `invalid_message`_                                                        |
 |                      | - `invalid_message_parameters`_                                             |
@@ -137,6 +139,11 @@ used by the HTML5 ``datetime-local`` field. Keeping the default value will
 cause the field to be rendered as an ``input`` field with ``type="datetime-local"``.
 For more information on valid formats, see `Date/Time Format Syntax`_.
 
+.. versionadded:: 4.3
+
+    Using the ``format`` option when the ``html5`` option is enabled is deprecated
+    since Symfony 4.3.
+
 .. include:: /reference/forms/types/options/hours.rst.inc
 
 .. include:: /reference/forms/types/options/html5.rst.inc
@@ -159,6 +166,13 @@ The value that comes back from the form will also be normalized back into
 this format.
 
 .. include:: /reference/forms/types/options/_date_limitation.rst.inc
+
+input_format
+~~~~~~~~~~~~
+
+**type**: ``string`` **default**: ``Y-m-d H:i:s``
+
+.. include:: /reference/forms/types/options/date_input_format_description.rst.inc
 
 .. include:: /reference/forms/types/options/minutes.rst.inc
 
@@ -202,6 +216,11 @@ Defines the ``widget`` option for both the :doc:`DateType </reference/forms/type
 and :doc:`TimeType </reference/forms/types/time>`. This can be overridden
 with the `date_widget`_ and `time_widget`_ options.
 
+.. versionadded:: 4.3
+
+    Using the ``date_format``, ``date_widget``, and ``time_widget`` options when
+    the ``widget`` option is set to ``single_text`` is deprecated since Symfony 4.3.
+
 .. include:: /reference/forms/types/options/with_minutes.rst.inc
 
 .. include:: /reference/forms/types/options/with_seconds.rst.inc
@@ -239,6 +258,8 @@ These options inherit from the :doc:`FormType </reference/forms/types/form>`:
 .. include:: /reference/forms/types/options/help.rst.inc
 
 .. include:: /reference/forms/types/options/help_attr.rst.inc
+
+.. include:: /reference/forms/types/options/help_html.rst.inc
 
 .. include:: /reference/forms/types/options/inherit_data.rst.inc
 
